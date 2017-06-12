@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
     :host h1,
     :host h2,
-    :host >>> h3{
+    :host >>> h3,
+    :host >>> p{
       font-family: Verdana;
     }
   `]
