@@ -3,4 +3,5 @@ export class Article {
     author: string;
     date: Date;
     descrition: string;
+    imageUrl: string;
 }
