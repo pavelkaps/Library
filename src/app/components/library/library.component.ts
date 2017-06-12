@@ -3,7 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'library',
   templateUrl: './library.component.html',
-  styleUrls: ['./library.component.css']
+  styles: [`
+    :host h1,
+    :host h2,
+    :host >>> h3{
+      font-family: Verdana;
+    }
+  `]
 })
 export class LibraryComponent implements OnInit {
 
