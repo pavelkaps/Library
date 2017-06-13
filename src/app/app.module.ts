@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { LibraryComponent } from './components/library/library.component';
 import { ArticleComponent } from './components/article/article.component';
 
+import {MdCardModule, MdButtonModule, MdToolbarModule} from '@angular/material';
+
+import 'hammerjs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +16,10 @@ import { ArticleComponent } from './components/article/article.component';
     ArticleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MdCardModule,
+    MdButtonModule,
+    MdToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
