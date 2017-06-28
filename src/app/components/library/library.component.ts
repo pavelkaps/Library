@@ -7,12 +7,13 @@ import { Article } from '../../models/article'
   styleUrls: ['./library.component.css']
 })
 export class LibraryComponent implements OnInit {
-  articles: Article[] = [];
-  
+  //articles: Article[] = [];
+  article: Article = new Article();
   constructor() {}
 
   addArticle(article: Article){
-    this.articles.push(article);
+    //this.articles.push(article);
+    this.article = article;
   }
 
   ngOnInit() {

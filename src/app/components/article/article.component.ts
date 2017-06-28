@@ -13,4 +13,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
   }
 
+  getImageSrc(){
+    return this.article.imageUrl ? this.article.imageUrl : "http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png";
+  }
 }
