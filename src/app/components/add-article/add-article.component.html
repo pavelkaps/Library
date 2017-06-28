@@ -1,5 +1,5 @@
 <md-card>
-    <img md-card-image [src]="article.imageUrl">
+    <img md-card-image [src]="getImageSrc()">
     <md-card-content>
         <md-input-container>
           <input mdInput placeholder="Article Image URL" [(ngModel)]="article.imageUrl">
@@ -15,6 +15,6 @@
         </md-input-container>
     </md-card-content>
     <md-card-actions>
-        <button md-button color="primary">Add</button>
+        <button md-button color="primary" (click)="addArticle()">Add</button>
     </md-card-actions>
 </md-card>
