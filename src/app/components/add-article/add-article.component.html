@@ -1,0 +1,20 @@
+<md-card>
+    <img md-card-image [src]="article.imageUrl">
+    <md-card-content>
+        <md-input-container>
+          <input mdInput placeholder="Article Image URL" [(ngModel)]="article.imageUrl">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput placeholder="Author" [(ngModel)]="article.author">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput placeholder="Title" [(ngModel)]="article.title">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput placeholder="Description" [(ngModel)]="article.description">
+        </md-input-container>
+    </md-card-content>
+    <md-card-actions>
+        <button md-button color="primary">Add</button>
+    </md-card-actions>
+</md-card>

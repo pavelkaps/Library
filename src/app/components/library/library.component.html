@@ -1,5 +1,12 @@
 <md-toolbar color="primary">
   <span>Library</span>
 </md-toolbar>
+
 <h2>Articles</h2>
-<app-article></app-article>
+<div class="articles">
+  <add-article></add-article>
+  <article *ngFor="let article of articles" [article]="article"></article>
+</div>
+
+
+

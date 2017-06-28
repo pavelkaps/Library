@@ -1,7 +1,8 @@
 <md-card>
-    <md-card-title>Article description</md-card-title>
-    <md-card-subtitle><p>Author <span>Date</span></p></md-card-subtitle>
-    <md-card-content>Some description</md-card-content>
+    <img md-card-image [src]="article.imageUrl">
+    <md-card-title>{{ article.title }}</md-card-title>
+    <md-card-subtitle><p>{{ article.title }} <span>{{article.date | date}}</span></p></md-card-subtitle>
+    <md-card-content>{{article.description}}</md-card-content>
     <md-card-actions>
         <button md-button color="primary">About</button>
     </md-card-actions>
