@@ -3,21 +3,27 @@
     margin: 15px;
 }
 
-md-card{
+.article{
     width: 300px;
+    transition: transform 0.2s;
 }
 
-md-card md-card-actions{
+.article .actions{
     display: flex;
 }
 
-md-card md-card-actions button{
+.article .actions button{
     margin-left: auto;
 }
 
-md-card md-checkbox{
+.article md-checkbox{
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.article.selectCard{
+    transform: scale(1.05);
+    background-color: #f9f9f9;
 }
 
