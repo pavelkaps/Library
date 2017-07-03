@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Article } from '../../models/article'
 
 @Component({
@@ -8,9 +8,17 @@ import { Article } from '../../models/article'
 })
 export class ArticleComponent implements OnInit {
   @Input() article: Article = new Article();
+  @Output() checkArticle = new EventEmitter<boolean>();
+
+  checked: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  check(){
+    this.checkArticle.emit(this.checked);
   }
 
   getImageSrc(){

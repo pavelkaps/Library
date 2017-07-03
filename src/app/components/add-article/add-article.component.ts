@@ -9,7 +9,6 @@ import { Article } from '../../models/article';
 export class AddArticleComponent implements OnInit {
   @Output() newArticle = new EventEmitter<Article>();
   article: Article = new Article();
-  
   constructor() { }
 
   getImageSrc(){

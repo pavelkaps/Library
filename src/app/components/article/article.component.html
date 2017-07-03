@@ -1,5 +1,8 @@
 <md-card>
     <img md-card-image [src]="getImageSrc()">
+    <md-checkbox
+        [(ngModel)]="checked"
+        (ngModelChange)="check($event)"></md-checkbox>
     <md-card-title>{{ article.title }}</md-card-title>
     <md-card-subtitle><p>{{ article.title }} <span>{{article.date | date}}</span></p></md-card-subtitle>
     <md-card-content>{{article.description}}</md-card-content>

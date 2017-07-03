@@ -12,7 +12,9 @@ import {
   MdCardModule, 
   MdButtonModule, 
   MdToolbarModule,
-  MdInputModule
+  MdInputModule,
+  MdCheckboxModule,
+  MdIconModule
 } from '@angular/material';
 
 import 'hammerjs';
@@ -31,7 +33,8 @@ import 'hammerjs';
     MdCardModule,
     MdButtonModule,
     MdToolbarModule,
-    MdInputModule
+    MdInputModule,
+    MdCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

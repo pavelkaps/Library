@@ -8,6 +8,9 @@ h2 {
 
 .articles{
     display: flex;
-    align-items: center;
     overflow: auto;
+}
+
+.toolbar .delete-btn{
+    margin-left: auto; 
 }

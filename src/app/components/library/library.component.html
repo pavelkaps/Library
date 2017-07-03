@@ -1,5 +1,10 @@
-<md-toolbar color="primary">
+<md-toolbar color="primary" class="toolbar">
   <span>Library</span>
+  <button *ngIf="checkedArticles.length !== 0" 
+  (click)="delete()"
+  md-mini-fab class="delete-btn">
+    
+  </button>
 </md-toolbar>
 
 <h2 *ngIf="articles.length !== 0">Articles: {{articles.length}}</h2>
@@ -7,7 +12,9 @@
 
 <div class="articles">
   <add-article (newArticle)="addArticle($event)"></add-article>
-  <article *ngFor="let article of articles" [article]="article"></article>
+  <article *ngFor="let article of articles" 
+      [article]="article"
+      (checkArticle)="checkArticle($event, article)"></article>
 </div>
 
 
