@@ -8,6 +8,8 @@ import { LibraryComponent } from './components/library/library.component';
 import { ArticleComponent } from './components/article/article.component';
 import { AddArticleComponent } from './components/add-article/add-article.component';
 
+import { ResizerDirective } from './directives/resizer.directive';
+
 import {
   MdCardModule, 
   MdButtonModule, 
@@ -24,7 +26,8 @@ import 'hammerjs';
     AppComponent,
     LibraryComponent,
     ArticleComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    ResizerDirective
   ],
   imports: [
     BrowserModule,
