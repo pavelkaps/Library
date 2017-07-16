@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../../models/article'
-
+import { ArticleService } from '../../services/article.service'
 @Component({
   selector: 'library',
   templateUrl: './library.component.html',
@@ -9,10 +9,13 @@ import { Article } from '../../models/article'
 export class LibraryComponent implements OnInit {
   articles: Article[] = [];
   checkedArticles: Article[] = [];
-  constructor() {}
+
+  constructor(private articleService : ArticleService) {
+    this.articleService.getArticles().then((articles) => this.articles = articles).then(() => console.log(this.articles));
+  }
 
   addArticle(article: Article){
-    this.articles.push(article);
+    this.articleService.addArticles(article).then(res => this.articles = this.articles.concat(res));
   }
 
   checkArticle(checked: boolean, article: Article){
@@ -21,8 +24,13 @@ export class LibraryComponent implements OnInit {
   }
 
   delete(){
-    this.articles = this.articles.filter((article) => !this.checkedArticles.some((a) => a === article));
-    this.checkedArticles = [];
+    const promises = this.checkedArticles
+      .map(article => this.articleService.deleteArticle(article.id));
+    Promise.all(promises).then(() => {
+      this.articles = this.articles.filter((article) => !this.checkedArticles.some((a) => a === article));
+      this.checkedArticles = [];
+    });
+    
   }
 
   ngOnInit() {

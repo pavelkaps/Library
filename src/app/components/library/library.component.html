@@ -12,6 +12,7 @@
   <add-article (newArticle)="addArticle($event)"></add-article>
   <article *ngFor="let article of articles" 
       [article]="article"
+      class="small check"
       (checkArticle)="checkArticle($event, article)"></article>
 </div>
 

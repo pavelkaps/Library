@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Article } from '../../models/article'
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'article',
@@ -12,13 +13,19 @@ export class ArticleComponent implements OnInit {
 
   checked: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   check(){
     this.checkArticle.emit(this.checked);
+  }
+
+  about(id){
+    this.router.navigate(
+            ['/about', id]
+        );
   }
 
   getImageSrc(){

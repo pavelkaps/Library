@@ -1,0 +1,35 @@
+<md-progress-bar *ngIf="loading" class="progress" mode="indeterminate"></md-progress-bar>
+<div class="align">
+  <md-card class="auth-block">
+    <md-tab-group>
+      <md-tab label="Sign Up" position="1">
+        <span *ngIf="message" class="err-message">{{message}}</span>
+        <section>
+        <form [formGroup]="registrationForm" novalidate>
+          <md-input-container>
+            <input mdInput placeholder="Email" formControlName="email">
+          </md-input-container>
+          <md-input-container>
+            <input type="password" mdInput placeholder="Password" formControlName="password">
+          </md-input-container>
+          <button color="primary" [disabled]="loading" md-raised-button (click)="register(); $event.preventDefault()">Sign Up</button>
+        </form>
+      </section>
+      </md-tab>
+      <md-tab label="Sign In" position="0">
+        <span *ngIf="message" class="err-message">{{message}}</span>
+        <section>
+          <form [formGroup]="loginForm" novalidate>
+            <md-input-container>
+              <input mdInput placeholder="Email" formControlName="email">
+            </md-input-container>
+            <md-input-container>
+              <input type="password" mdInput placeholder="Password" formControlName="password">
+            </md-input-container>
+            <button md-raised-button [disabled]="loading" color="primary" (click)="login(); $event.preventDefault()">Sign In</button>
+          </form>
+        </section>
+      </md-tab>
+    </md-tab-group>
+  </md-card>
+</div>
