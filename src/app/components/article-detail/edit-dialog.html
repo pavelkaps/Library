@@ -1,0 +1,16 @@
+<form class="article-form" [formGroup]="editArticleForm" (ngSubmit)="editArticle(article)">
+    <img class="image-article" [src]="getImageSrc()">
+    <md-input-container>
+        <input mdInput placeholder="Article Image URL" formControlName="imageUrl">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput placeholder="Author" formControlName="author">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput placeholder="Title" formControlName="title">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput placeholder="Description" formControlName="description">
+    </md-input-container>
+    <button md-button color="primary">Save</button>
+ </form>

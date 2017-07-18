@@ -10,7 +10,7 @@ import { LibraryComponent } from './components/library/library.component';
 import { ArticleComponent } from './components/article/article.component';
 import { AddArticleComponent } from './components/add-article/add-article.component';
 import { AuthorizationComponent } from './components/authorization/authorization.component'
-import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
+import { ArticleDetailComponent, EditDialog } from './components/article-detail/article-detail.component';
 
 import { ResizerDirective } from './directives/resizer.directive';
 
@@ -27,7 +27,8 @@ import {
   MdInputModule,
   MdCheckboxModule,
   MdIconModule,
-  MdTabsModule
+  MdTabsModule,
+  MdDialogModule
 } from '@angular/material';
 
 import 'hammerjs';
@@ -40,7 +41,8 @@ import 'hammerjs';
     AddArticleComponent,
     AuthorizationComponent,
     ResizerDirective,
-    ArticleDetailComponent
+    ArticleDetailComponent,
+    EditDialog
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -55,11 +57,13 @@ import 'hammerjs';
     MdInputModule,
     MdCheckboxModule,
     MdTabsModule,
+    MdDialogModule,
     InMemoryWebApiModule.forRoot(MemoryArticleService),
   ],
   providers: [
     ArticleService
   ],
+  entryComponents: [EditDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

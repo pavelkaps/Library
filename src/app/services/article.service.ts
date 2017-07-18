@@ -40,6 +40,15 @@ export class ArticleService {
         .catch(this.handleError);
   }
 
+  updateArticle(article: Article): Promise<Article> {
+      const url = `${this.url}/${article.id}`;
+      return this.http
+        .put(url, JSON.stringify(article), {headers: this.headers})
+        .toPromise()
+        .then(() => article)
+        .catch(this.handleError);
+}
+
   private handleError(error: any): Promise<any> {
     console.error(error);
     return Promise.reject(error.message || error);

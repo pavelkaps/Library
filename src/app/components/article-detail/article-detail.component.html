@@ -1,1 +1,9 @@
-<article [article]="article"></article>
+<md-card [ngClass]="{selectCard: checked}" class="article" >
+    <img md-card-image [src]="getImageSrc()">
+    <md-card-title>{{ article.title }}</md-card-title>
+    <md-card-subtitle><p>{{ article.author }} <span>{{article.date | date}}</span></p></md-card-subtitle>
+    <md-card-content>{{article.description}}</md-card-content>
+    <md-card-actions class="actions">
+        <button md-button color="primary" (click)="openEditDialog()">Edit</button>
+    </md-card-actions>
+</md-card>

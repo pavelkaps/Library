@@ -1,7 +1,7 @@
-export class GUID {
+export class ID {
     static id: number = 0;
 
     static generate() {
-        return GUID.id++;
+        return ID.id++;
     }
 }

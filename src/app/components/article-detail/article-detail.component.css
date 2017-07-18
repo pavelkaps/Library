@@ -1,0 +1,17 @@
+:host{
+    display: flex;
+    justify-content: center;
+}
+
+.article{
+    margin: 30px;
+    width: 600px;
+}
+
+.article .actions{
+    display: flex;
+}
+
+.article .actions button{
+    margin-left: auto;
+}

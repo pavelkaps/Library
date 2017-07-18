@@ -1,11 +1,11 @@
-import { GUID } from '../additional/GUID'
+import { ID } from '../additional/ID'
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class MemoryArticleService implements InMemoryDbService {
   createDb() {
     let articles = [
         { 
-            id: GUID.generate(),
+            id: ID.generate(),
             title: 'Angular Web', 
             author: 'John',
             date: new Date(),
@@ -13,7 +13,7 @@ export class MemoryArticleService implements InMemoryDbService {
             imageUrl: 'http://blog.stoneriverelearning.com/wp-content/uploads/2016/08/A2.jpg'
         },
         { 
-            id: GUID.generate(),
+            id: ID.generate(),
             title: 'JavaScript', 
             author: 'John',
             date: new Date(),
@@ -21,7 +21,7 @@ export class MemoryArticleService implements InMemoryDbService {
             imageUrl: 'https://proglib.io/wp-content/uploads/2017/03/xz55s4v5m21mphibapiv.png'
         },
         { 
-            id: GUID.generate(),
+            id: ID.generate(),
             title: 'WebPack', 
             author: 'John',
             date: new Date(),
@@ -29,7 +29,7 @@ export class MemoryArticleService implements InMemoryDbService {
             imageUrl: 'http://www.sdblog.ru/wp-content/uploads/2017/02/webpack.jpg'
         },
         { 
-            id: GUID.generate(),
+            id: ID.generate(),
             title: 'Gulp', 
             author: 'John',
             date: new Date(),

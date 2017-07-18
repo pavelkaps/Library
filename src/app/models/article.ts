@@ -1,4 +1,4 @@
-import { GUID } from '../additional/GUID'
+import { ID } from '../additional/ID'
 
 export class Article {
     id: number;
@@ -9,6 +9,6 @@ export class Article {
     imageUrl: string;
 
     constructor(){
-        this.id = GUID.generate();
+        this.id = ID.generate();
     }
 }
