@@ -12,5 +12,5 @@
     <md-input-container>
         <input mdInput placeholder="Description" formControlName="description">
     </md-input-container>
-    <button md-button color="primary">Save</button>
+    <button md-button color="primary" [disabled]="!editArticleForm.valid">Save</button>
  </form>

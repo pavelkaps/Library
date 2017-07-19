@@ -13,10 +13,10 @@ export class AddArticleComponent implements OnInit {
   addArticleForm : FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.addArticleForm = formBuilder.group({
-            "imageUrl": ["", [Validators.pattern("http:\/\/[a-zA-Z0-9_\-]+\.[a-zA-Z0-9_\-]+\.[a-zA-Z0-9_\-]+") ]],
-            "author": ["", [ Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
-            "title": ["", [ Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
-            "description": ["", [ Validators.required, Validators.minLength(5), Validators.maxLength(20)]]
+            "imageUrl": ["", [Validators.pattern("(https?:\/\/.*\.(?:png|jpg))") ]],
+            "author": ["", [ Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+            "title": ["", [ Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+            "description": ["", [ Validators.required, Validators.minLength(5), Validators.maxLength(255)]]
         });
   }
 

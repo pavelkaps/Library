@@ -55,14 +55,15 @@ export class EditDialog {
               private dialogRef: MdDialogRef<EditDialog>) {
 
     this.editArticleForm = formBuilder.group({
-            "imageUrl": [article.imageUrl, [Validators.pattern("http:\/\/[a-zA-Z0-9_\-]+\.[a-zA-Z0-9_\-]+\.[a-zA-Z0-9_\-]+") ]],
-            "author": [article.author, [ Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
-            "title": [article.title, [ Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
-            "description": [article.description, [ Validators.required, Validators.minLength(5), Validators.maxLength(20)]]
+            "imageUrl": [article.imageUrl, [Validators.pattern("(https?:\/\/.*\.(?:png|jpg))") ]],
+            "author": [article.author, [ Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+            "title": [article.title, [ Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+            "description": [article.description, [ Validators.required, Validators.minLength(5), Validators.maxLength(255)]]
         });
   }
 
   editArticle(article: Article){
+    if(!this.editArticleForm.valid) return;
     article.author = this.editArticleForm.controls.author.value;
     article.imageUrl = this.editArticleForm.controls.imageUrl.value;
     article.title = this.editArticleForm.controls.title.value;
