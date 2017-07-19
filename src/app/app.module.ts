@@ -32,6 +32,7 @@ import {
 } from '@angular/material';
 
 import 'hammerjs';
+import { ArticlesPageComponent } from './articles-page/articles-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import 'hammerjs';
     AuthorizationComponent,
     ResizerDirective,
     ArticleDetailComponent,
-    EditDialog
+    EditDialog,
+    ArticlesPageComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

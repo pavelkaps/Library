@@ -22,12 +22,6 @@ export class ArticleComponent implements OnInit {
     this.checkArticle.emit(this.checked);
   }
 
-  about(id){
-    this.router.navigate(
-            ['/about', id]
-        );
-  }
-
   getImageSrc(){
     return this.article.imageUrl ? this.article.imageUrl : "http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png";
   }
