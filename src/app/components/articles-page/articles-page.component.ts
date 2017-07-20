@@ -15,10 +15,7 @@ export class ArticlesPageComponent implements OnInit {
   constructor(private articleService : ArticleService,
               private eventSharedService: EventSharedService) {
     this.articleService.getArticles().then((articles) => this.articles = articles);
-    this.eventSharedService.deleteAction.subscribe(() => {
-      console.log('action');
-      this.delete();
-    })
+    this.eventSharedService.deleteAction.subscribe(() => this.delete());
   }
 
   addArticle(article: Article){

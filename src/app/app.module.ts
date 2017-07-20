@@ -19,6 +19,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MemoryArticleService } from './api/article-api';
 import { ArticleService } from './services/article.service'
 import { EventSharedService } from './services/event-shared.service'
+import { AuthService } from './services/auth.service'
 
 import { appRoutes } from './app.routing'
 
@@ -65,7 +66,8 @@ import 'hammerjs';
   ],
   providers: [
     ArticleService,
-    EventSharedService
+    EventSharedService,
+    AuthService
   ],
   entryComponents: [EditDialog],
   bootstrap: [AppComponent]

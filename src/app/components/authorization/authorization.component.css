@@ -34,15 +34,3 @@ form{
 :host >>> md-tab-header{
     margin: -24px -24px 0;
 }
-
-.progress{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.err-message{
-    display: inline-block;
-    margin: 10px 0 0;
-    color: #D8000C;
-}
