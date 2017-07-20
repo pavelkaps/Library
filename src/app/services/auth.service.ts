@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 
 const STORAGE_KEY = 'users';
+const CURRENT_USER_KEY = 'current';
+
 
 @Injectable()
 export class AuthService {
+
   constructor() {
     const users = [{
       email: 'admin@admin.com',
       password: 'admin'
     }]
-
     localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
   }
 
@@ -21,14 +23,24 @@ export class AuthService {
     }
     let result = false;
     if(!this.ckeckUserLogin(email)){
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(users.concat(newUser)))
+      this.saveCurrentUser(newUser);
+      this.saveUsers(users.concat(newUser));
       result = true;
     };
     return result;
 }
 
   login(email, password){
-    return this.ckeckUserInfo(email, password);
+    let result = false;
+    if(this.ckeckUserInfo(email, password)){
+      this.saveCurrentUser({
+        email, 
+        password
+      });
+      result = true;
+    };
+    console.log(result);
+    return result;
   }
 
   ckeckUserInfo(email, password){
@@ -41,7 +53,23 @@ export class AuthService {
     return users.some((user) => user.email === email);
   }
 
-  log(){
-    console.log(localStorage.getItem(STORAGE_KEY));
+  saveUsers(users){
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(users))
+  }
+
+  saveCurrentUser(user){
+    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+  }
+
+  getCurrentUser(){
+    return JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
+  }
+
+  signOut(){
+    this.saveCurrentUser({});
+  }
+
+  checkUserAuth(){
+    return !!this.getCurrentUser();
   }
 }

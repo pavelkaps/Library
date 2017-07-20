@@ -23,6 +23,8 @@ import { AuthService } from './services/auth.service'
 
 import { appRoutes } from './app.routing'
 
+import { AuthGuard } from './guards/auth.guard'
+
 import {
   MdCardModule, 
   MdButtonModule, 
@@ -67,7 +69,8 @@ import 'hammerjs';
   providers: [
     ArticleService,
     EventSharedService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   entryComponents: [EditDialog],
   bootstrap: [AppComponent]
