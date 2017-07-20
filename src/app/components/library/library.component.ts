@@ -1,39 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Article } from '../../models/article'
 import { ArticleService } from '../../services/article.service'
+import { EventSharedService } from '../../services/event-shared.service'
+
 @Component({
   selector: 'library',
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.css']
 })
-export class LibraryComponent implements OnInit {
-  articles: Article[] = [];
-  checkedArticles: Article[] = [];
+export class LibraryComponent{
+  deleteButtonActive: boolean = false;
 
-  constructor(private articleService : ArticleService) {
-    this.articleService.getArticles().then((articles) => this.articles = articles).then(() => console.log(this.articles));
-  }
-
-  addArticle(article: Article){
-    this.articleService.addArticles(article).then(res => this.articles = this.articles.concat(res));
-  }
-
-  checkArticle(checked: boolean, article: Article){
-    checked ? this.checkedArticles.push(article) 
-            : this.checkedArticles = this.checkedArticles.filter((a) => a !== article);
+  constructor(private eventSharedService: EventSharedService){
+    this.eventSharedService.deleteBtnActive.subscribe((check) => {
+      this.deleteButtonActive = check;
+    })
   }
 
   delete(){
-    const promises = this.checkedArticles
-      .map(article => this.articleService.deleteArticle(article.id));
-    Promise.all(promises).then(() => {
-      this.articles = this.articles.filter((article) => !this.checkedArticles.some((a) => a === article));
-      this.checkedArticles = [];
-    });
-    
+    this.eventSharedService.deleteAction.emit();
   }
-
-  ngOnInit() {
-  }
-
 }

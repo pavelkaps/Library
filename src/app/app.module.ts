@@ -11,12 +11,14 @@ import { ArticleComponent } from './components/article/article.component';
 import { AddArticleComponent } from './components/add-article/add-article.component';
 import { AuthorizationComponent } from './components/authorization/authorization.component'
 import { ArticleDetailComponent, EditDialog } from './components/article-detail/article-detail.component';
+import { ArticlesPageComponent } from './components/articles-page/articles-page.component';
 
 import { ResizerDirective } from './directives/resizer.directive';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MemoryArticleService } from './api/article-api';
 import { ArticleService } from './services/article.service'
+import { EventSharedService } from './services/event-shared.service'
 
 import { appRoutes } from './app.routing'
 
@@ -32,7 +34,6 @@ import {
 } from '@angular/material';
 
 import 'hammerjs';
-import { ArticlesPageComponent } from './articles-page/articles-page.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { ArticlesPageComponent } from './articles-page/articles-page.component';
     InMemoryWebApiModule.forRoot(MemoryArticleService),
   ],
   providers: [
-    ArticleService
+    ArticleService,
+    EventSharedService
   ],
   entryComponents: [EditDialog],
   bootstrap: [AppComponent]

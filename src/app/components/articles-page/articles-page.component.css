@@ -1,0 +1,8 @@
+.articles{
+    display: flex;
+    overflow: auto;
+}
+
+h2 {
+    text-align: center;
+}

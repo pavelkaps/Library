@@ -1,14 +1,5 @@
-*{
+:host >>> *{
     font-family: Roboto, sans-serif;
-}
-
-h2 {
-    text-align: center;
-}
-
-.articles{
-    display: flex;
-    overflow: auto;
 }
 
 .toolbar .delete-btn{
