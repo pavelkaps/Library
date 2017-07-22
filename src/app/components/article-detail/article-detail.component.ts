@@ -13,7 +13,7 @@ import {MD_DIALOG_DATA} from '@angular/material';
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.css']
 })
-export class ArticleDetailComponent implements OnInit {
+export class ArticleDetailComponent{
   private article: Article = new Article();
   private subscription: Subscription;
 
@@ -33,12 +33,6 @@ export class ArticleDetailComponent implements OnInit {
       data: this.article
     });
   }
-
-  getImageSrc(){
-    return this.article.imageUrl ? this.article.imageUrl : "http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png";
-  }
-
-  ngOnInit() {}
 }
 
 @Component({

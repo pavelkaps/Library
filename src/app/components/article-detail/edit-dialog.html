@@ -1,5 +1,5 @@
 <form class="article-form" [formGroup]="editArticleForm" (ngSubmit)="editArticle(article)">
-    <img class="image-article" [src]="getImageSrc()">
+    <img class="image-article" [src]="this.editArticleForm.controls.imageUrl.value | default">
     <md-input-container>
         <input mdInput placeholder="Article Image URL" formControlName="imageUrl">
     </md-input-container>
