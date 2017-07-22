@@ -73,9 +73,4 @@ export class EditDialog {
       this.dialogRef.close();   
     });
   }
-
-  getImageSrc(){
-    const image = this.editArticleForm.controls.imageUrl.value;
-    return image ? image : "http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png";
-  }
 }

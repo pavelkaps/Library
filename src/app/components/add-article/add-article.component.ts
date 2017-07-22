@@ -7,7 +7,7 @@ import { Article } from '../../models/article';
   templateUrl: './add-article.component.html',
   styleUrls: ['./add-article.component.css']
 })
-export class AddArticleComponent implements OnInit {
+export class AddArticleComponent {
   @Output() newArticle = new EventEmitter<Article>();
   article: Article;
   addArticleForm : FormGroup;
@@ -18,14 +18,6 @@ export class AddArticleComponent implements OnInit {
             "title": ["", [ Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
             "description": ["", [ Validators.required, Validators.minLength(5), Validators.maxLength(255)]]
         });
-  }
-
-  getImageSrc(){
-    const image = this.addArticleForm.controls.imageUrl.value;
-    return image ? image : "http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png";
-  }
-
-  ngOnInit() {
   }
 
   addArticle(){

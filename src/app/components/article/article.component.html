@@ -1,5 +1,5 @@
 <md-card [ngClass]="{selectCard: checked}" class="article" >
-    <img md-card-image [src]="getImageSrc()">
+    <img md-card-image [src]="article.imageUrl | default">
     <md-checkbox
         [(ngModel)]="checked"
         (ngModelChange)="check($event)"></md-checkbox>

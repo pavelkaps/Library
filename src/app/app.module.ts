@@ -37,6 +37,7 @@ import {
 } from '@angular/material';
 
 import 'hammerjs';
+import { DefaultImagePipe } from './pipes/default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import 'hammerjs';
     ResizerDirective,
     ArticleDetailComponent,
     EditDialog,
-    ArticlesPageComponent
+    ArticlesPageComponent,
+    DefaultImagePipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

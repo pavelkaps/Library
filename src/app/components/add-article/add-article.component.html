@@ -1,6 +1,6 @@
 <form [formGroup]="addArticleForm" (ngSubmit)="addArticle()">
   <md-card>
-      <img md-card-image [src]="getImageSrc()">
+      <img md-card-image [src]="addArticleForm.controls.imageUrl.value | default">
         <md-card-content>
             <md-input-container>
               <input mdInput placeholder="Article Image URL" formControlName="imageUrl">

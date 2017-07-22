@@ -21,8 +21,4 @@ export class ArticleComponent implements OnInit {
   check(){
     this.checkArticle.emit(this.checked);
   }
-
-  getImageSrc(){
-    return this.article.imageUrl ? this.article.imageUrl : "http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png";
-  }
 }

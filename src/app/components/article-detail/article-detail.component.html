@@ -2,7 +2,7 @@
     <md-icon>arrow_back</md-icon>
 </button>
 <md-card [ngClass]="{selectCard: checked}" class="article" >
-    <img md-card-image [src]="getImageSrc()">
+    <img md-card-image [src]="editArticleForm.controls.imageUrl.value | default">
     <md-card-title>{{ article.title }}</md-card-title>
     <md-card-subtitle><p>{{ article.author }} <span>{{article.date | date}}</span></p></md-card-subtitle>
     <md-card-content>{{article.description}}</md-card-content>
