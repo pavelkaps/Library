@@ -33,7 +33,7 @@ import {
   MdCheckboxModule,
   MdIconModule,
   MdTabsModule,
-  MdDialogModule
+  MdDialogModule,
 } from '@angular/material';
 
 import 'hammerjs';
@@ -64,6 +64,7 @@ import 'hammerjs';
     MdCheckboxModule,
     MdTabsModule,
     MdDialogModule,
+    MdIconModule,
     InMemoryWebApiModule.forRoot(MemoryArticleService),
   ],
   providers: [

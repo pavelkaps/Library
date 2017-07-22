@@ -1,7 +1,8 @@
-:host >>> *{
+:host >>> *:not(md-icon){
     font-family: Roboto, sans-serif;
 }
 
 .toolbar .delete-btn{
     margin-left: auto; 
+    color: #f2f2f2;
 }

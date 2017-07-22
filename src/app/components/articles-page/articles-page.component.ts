@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ArticleService } from '../../services/article.service'
 import { Article } from '../../models/article'
 import { EventSharedService } from '../../services/event-shared.service'
+import { Router, NavigationEnd} from '@angular/router';
 
 @Component({
   selector: 'app-articles-page',
@@ -13,9 +14,13 @@ export class ArticlesPageComponent implements OnInit {
   checkedArticles: Article[] = [];
 
   constructor(private articleService : ArticleService,
-              private eventSharedService: EventSharedService) {
+              private eventSharedService: EventSharedService,
+              private router: Router) {
     this.articleService.getArticles().then((articles) => this.articles = articles);
     this.eventSharedService.deleteAction.subscribe(() => this.delete());
+    this.router.events.subscribe((event) => {
+      this.eventSharedService.deleteBtnActive.emit(false);
+    })
   }
 
   addArticle(article: Article){

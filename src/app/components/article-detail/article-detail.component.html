@@ -1,4 +1,6 @@
-<button md-button color="primary" routerLink="/app" class="nav-btn">Main page</button>
+<button md-button color="primary" routerLink="/app" class="nav-btn">
+    <md-icon>arrow_back</md-icon>
+</button>
 <md-card [ngClass]="{selectCard: checked}" class="article" >
     <img md-card-image [src]="getImageSrc()">
     <md-card-title>{{ article.title }}</md-card-title>

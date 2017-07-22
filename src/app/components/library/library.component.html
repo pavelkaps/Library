@@ -2,6 +2,8 @@
   <span>Library</span>
   <button *ngIf="deleteButtonActive" 
   (click)="delete()"
-  md-mini-fab class="delete-btn"></button>
+  md-mini-fab class="delete-btn">
+    <md-icon>delete</md-icon>
+  </button>
 </md-toolbar>
 <router-outlet></router-outlet>
